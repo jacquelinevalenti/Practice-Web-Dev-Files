@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<!--This is a comment-->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Jackie's demo</title>
+    <style>
+        body {
+            background-color:mediumaquamarine;
+        }
+        li {
+            color:lightcoral;
+        }
+        #blue {
+            color:blue;
+        }
+        .bobPotLuck {
+            background-color:yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <button id="DoIt"> Click Me To Add </button>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <p class="bobPotLuck">
+        Welcome to class.
+    </p>
+    <p>
+        <ol id="TheList">
+            <li>
+            <strong>
+                <span style="background-color:navajowhite">
+                    Item1
+                </span>
+            </strong>
+            </li>
+            <li>
+                <em>
+                    Item2
+                </em>
+            </li>
+            <li>Item3</li>
+        </ol>
+        <ul>
+            <li style="font-style:oblique">Item1</li>
+            <li id="blue">Item2</li>
+            <li>Item3</li>
+        </ul>
+        Today <br /> is <br /> Tuesday!
+    </p>
+    <script>
+        function AddToList() {
+            for (var i = 1; i < 4; i++) {
+                var newItem = document.createElement('li');
+                newItem.textContent = "Jackie's list";
+                var myList = document.getElementById("TheList");
+                myList.append(newItem);
+        }
+        }
+        var myButton = document.getElementById("DoIt");
+        myButton.addEventListener("click", AddToList);
+    </script>
+</body>
+</html>

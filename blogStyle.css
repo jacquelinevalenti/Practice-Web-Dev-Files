@@ -1,0 +1,44 @@
+/*border color: #bdc3c7
+date color: #3498db
+h2 color: #2c3e50
+font: source sans pro 
+<hr> element*/
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	margin: 20px auto;
+	padding: 20px;
+	border: 20px solid #bdc3c7;
+	max-width: 700px;
+	width: 80%
+}
+
+.post {
+	border-bottom: 1px solid rgba(11,11,28,0.2)
+}
+
+h2 {
+	font-size: 2.0rem;
+	font-weight: bold;
+	color: #2c3e50;
+}
+
+h4 {
+	color: #3498db;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+/*div p:nth-of-type(1){*/
+.firstPara {
+	border-left: 5px solid #bdc3c7;
+	padding-left: 10px;
+}
+
+/*can use an <hr> tag to create a line instead of putting a border on the post class*/
+/*you can google fancy looking hrs for more style*/
+
+/*hr {
+	width: 89%;
+	color: rgba(11,11,28,0.1)
+}

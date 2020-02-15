@@ -1,0 +1,23 @@
+h1 {
+	color: #3275a8;
+/*	border-color: purple;
+	border-width: 5px;
+	border-style: solid;*/
+
+	border: 5px dashed cornflowerblue;
+}
+
+li {
+	color: rgb(208,90,240);
+}
+
+h4 {
+	color: rgba(15, 240, 55, .8);
+	background: rgb(255, 100, 80);
+}
+
+body {
+	background: url(https://hsnaples.org/wp-content/uploads/max_0025-copy-copy.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
