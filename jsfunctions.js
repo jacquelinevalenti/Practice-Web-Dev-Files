@@ -18,3 +18,8 @@ function factorial(num){
         return total;
     }
 }
+
+function kebabToSnake(kebab){
+    let snake = kebab.replace("-", "_");
+    return snake;
+}
