@@ -74,3 +74,7 @@ tag.textContent // returns "this is an awesome paragraph"
 
 // alter the text in that element
 tag.textContent = "I'm changing this paragraph";
+
+tag.innerHTML;
+// maintains any tags within an element
+// returns "this is an <strong>awesome</strong> paragraph"
