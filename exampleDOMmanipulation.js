@@ -32,7 +32,7 @@ var tags = document.getElementsByTagName("li");
 
 // *****************
 
-var body = document.querySelector("body"); // select
+/* var body = document.querySelector("body"); // select
 var isBlue = false;
 
 setInterval(function(){
@@ -44,7 +44,7 @@ setInterval(function(){
         body.style.background = "#3498db";
     }
     isBlue = !isBlue;
-}, 1000);
+}, 1000); */
 
 var h1 = document.querySelector("h1");
 h1.style.color = "pink";
@@ -78,3 +78,12 @@ tag.textContent = "I'm changing this paragraph";
 tag.innerHTML;
 // maintains any tags within an element
 // returns "this is an <strong>awesome</strong> paragraph"
+
+
+// ******EVENT LISTENERS*******
+// create a button that you can use to toggle the background color of the web page
+var button = document.querySelector("button");
+var isPurple = false;
+button.addEventListener("click", function(){
+    document.body.classList.toggle("purple");
+});
