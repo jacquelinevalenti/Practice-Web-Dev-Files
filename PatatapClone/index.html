@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/CSS/patatap.css">
+    <script src="assets/JS/paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+        // Create a Paper.js Path to draw a line into it:
+        var path = new Path();
+        // Give the stroke a color
+        path.strokeColor = 'purple';
+        var start = new Point(100, 100);
+        // Move to start and draw a line from there
+        path.moveTo(start);
+        // Note the plus operator on Point objects.
+        // PaperScript does that for us, and much more!
+        // for(var x = 0; x < 1000; x+=100){
+        //     for (var y = 0; y < 1000; y+=100) {
+        //         new Path.Circle(new Point(x, y), 10).fillColor = "purple";
+        //     }
+        // }
+        function onKeyDown(event) {
+            var maxPoint = new Point(view.size.width, view.size.height);
+            var randomPoint = Point.random();
+            var point = maxPoint * randomPoint;
+	        // When a key is pressed, add a circle to a random location 
+            new Path.Circle(point, 10).fillColor = "orange";
+        }
+
+        var animatedCircle = new Path.Circle(new Point(300,300), 100);
+        animatedCircle.fillColor = "red";
+
+        function onFrame(event){
+            animatedCircle.fillColor.hue += 1;
+            animatedCircle.scale(0.9);
+        }
+    </script>
+
+
     <title>Patatap</title>
 </head>
 <body>
     
+
+    <canvas id="myCanvas" resize></canvas>
 </body>
 </html>
