@@ -7,4 +7,12 @@ canvas{
 body, html{
     height: 100%;
     margin: 0;
+    background: black;
+    font-family: 'Lexend Tera', sans-serif;
+}
+
+.container{
+    color: gray;
+    text-align: center;
+    margin-top: 300px;
 }

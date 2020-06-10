@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/CSS/patatap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera&display=swap" rel="stylesheet">
     <script src="assets/JS/paper-full.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
     <script type="text/paperscript" canvas="myCanvas">
+        
 
+        // library of sound and color for each key
         var keyData = {
             q: {
                 sound: new Howl({
@@ -168,25 +172,35 @@
             }
         }
 
+        // array to hold circles during creation
         var circles = [];
 
         function onKeyDown(event) {
+            // check if pressed key exists in data
             if(keyData[event.key]){
+                // define a random point on the screen
                 var maxPoint = new Point(view.size.width, view.size.height);
                 var randomPoint = Point.random();
                 var point = maxPoint * randomPoint;
                 // When a key is pressed, add a circle to a random location 
                 var newCircle = new Path.Circle(point, 500);
+                // define the color of the circle
                 newCircle.fillColor = keyData[event.key].color;
+                // play the sound associated with the key pressed
                 keyData[event.key].sound.play();
+                // add the circle to the array
                 circles.push(newCircle);
             } 
         }
 
         function onFrame(event){
+            // loop through the circles array and add animation
             for(var i = 0; i < circles.length; i++){
+                // animate fill color
                 circles[i].fillColor.hue += 2;
+                // scale down size of circle
                 circles[i].scale(0.9);
+                // once circles are very small, remove from screen and array to save memory
                 if(circles[i].area < 1){
                     circles[i].remove(); // remove the circle from the canvas
                     circles.splice(i, 1); // remove the circle from the array
@@ -199,8 +213,13 @@
     <title>Patatap</title>
 </head>
 <body>
-    
-
+    <div class="container">
+        <h1>patatap clone</h1>
+        <h3>press any key to start</h3>
+    </div>
+    <script src="assets/JS/patatap.js"></script>
     <canvas id="myCanvas" resize></canvas>
+
+    
 </body>
 </html>
